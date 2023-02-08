@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,10 +19,8 @@ class AdminFactory extends Factory
     {
         return [
 
-            'email' => $this->faker->safeEmail,
-            'first_name' => $this->faker->firstName,
-            'last_name' => $this->faker->lastName,
-            'phone' => $this->faker->phoneNumber,
+            'user_id' => User::factory(),
+            'role' => $this->faker->randomElement(['super_admin', 'admin']),
 
         ];
     }

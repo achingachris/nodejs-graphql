@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,14 +21,9 @@ class ClientFactory extends Factory
 
         return [
 
+            'user_id' => User::factory(),
             'company_name' => $this->faker->company(),
-            'email' => $this->faker->safeEmail,
-            'first_name' => $this->faker->firstName,
-            'last_name' => $this->faker->lastName,
-            'phone' => $this->faker->phoneNumber,
-            'bsns_specialization' => $bsns_specialization,
-            'relevant_docs' => $this->faker->randomNumber(10),
-            'tin_number' => $this->faker->randomNumber(10),
+            'tin_number' => $this->faker->randomNumber(5,15),
             'address' => $this->faker->address(),
 
         ];

@@ -15,15 +15,10 @@ return new class extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->increments('id');
-            $table->String('first_name');
-            $table->String('last_name');
-            $table->String('phone');
-            $table->String('email');
+            $table->integer('user_id');
             $table->String('company_name');
-            $table->String('tin_number');
+            $table->integer('tin_number');
             $table->String('address');
-            $table->char('bsns_specialization');
-            $table->integer('relevant_docs');
             $table->timestamps();
         });
     }
